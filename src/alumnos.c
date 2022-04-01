@@ -32,7 +32,7 @@ static const struct alumno_s ESTEBAN_VOLENTINI = {
 };
 
 static const struct alumno_s PERMINGEAT_ALEJANDRO = {
-    .apellidos = "permingeat",
+    .apellidos = "PERMINGEAT",
     .nombres = "alejandro",
     .documento = "99.999.999",
 };
@@ -40,7 +40,6 @@ static const struct alumno_s PERMINGEAT_ALEJANDRO = {
 const alumno_t ALUMNOS[] = {
     &ESTEBAN_VOLENTINI,
     &PERMINGEAT_ALEJANDRO,
-    
 };
 
 const int CANTIDAD_ALUMNOS = (sizeof(ALUMNOS) / sizeof(alumno_t));
