@@ -29,18 +29,49 @@ extern "C" {
 
 /*=====[Definitions of public data types]====================================*/
 
+/**
+ * @brief Estructura para almacenar los datos de un alumno
+ * 
+ * Esta estructura se utiliza para almacenar los datos de un alumno
+ * 
+ */
 typedef struct alumno_s {
-    char apellidos[30];
-    char nombres[30];
-    char documento[11];
+    char apellidos[30];     //!< Apellidos del alumno
+    char nombres[30];       //!< Nombres del alumno
+    char documento[11];     //!< Documento del alumno
 } const * alumno_t;
 
 /*=====[Definitions of public global variables]==============================*/
 
 /*=====[Prototypes (declarations) of public functions]=======================*/
-
+/**
+ * @brief Serializa los datos de un alumno en una cadena
+ * 
+ * Esta función se utiliza para convertir una estructura de datos en memoria
+ * del tipo C en una cadena de caracteres siguiendo el estándar. Para ello
+ * recibe el puntero a la cadena correspondiente, la cantidad de bytes disponibles
+ * y el puntero a la estructura de datos del alumno.
+ * 
+ * @param[out] cadena Puntero a la cadena de caracteres con el resultado
+ * @param[in] espacio Cantidad de bytes disponibles en la cadena de resultado 
+ * @param[in] alumno Puntero a la estructura de los datos del alumno
+ * @return true Los datos del alumno se serializaron correctamente en la cadena
+ * @return false No hay espacio suficiente en la cadena para serializar los datos del alumno
+ */
 bool SerializarAlumno(char * cadena, size_t espacio, const alumno_t alumno);
 
+/**
+ * @brief Serializa los datos de todos los alumnos en una cadena
+ * 
+ * Esta función se utiliza para convertir una estructura de datos en memoria
+ * del tipo C en una cadena de caracteres siguiendo el estándar. Para ello
+ * recibe el puntero a la cadena de cada alumno y la cantidad de bytes disponibles.
+ * 
+ * @param[out] cadena Puntero a la cadena de caracteres con el resultado
+ * @param[in] espacio Cantidad de bytes disponibles en la cadena de resultado 
+ * @return true Los datos de todos los alumnos se serializaron correctamente en la cadena
+ * @return false No hay espacio suficiente en la cadena para serializar los datos de todos los alumnos
+ */
 bool SerializarAlumnos(char * cadena, size_t espacio);
 
 /*=====[Prototypes (declarations) of public interrupt functions]=============*/
