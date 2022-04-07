@@ -25,10 +25,20 @@
 
 /*=====[Definitions of public global variables]==============================*/
 
+static const struct alumno_s ESTEBAN_VOLENTINI = {
+    .apellidos = "VOLENTINI",
+    .nombres = "Esteban Daniel",
+    .documento = "23.517.968",
+};
+
 static const struct alumno_s CARLOS_HERRERA = {
     .apellidos = "HERRERA",
     .nombres = "Carlos Silvestre",
     .documento = "44576112",
+};
+
+const alumno_t ALUMNOS[] = {
+    &ESTEBAN_VOLENTINI,
 };
 
 const alumno_t ALUMNOS[] = {
