@@ -35,17 +35,6 @@ typedef struct alumno_s {
     char documento[11];  //! numero de documento !  
 } const * alumno_t;
 
-/*=====[Definitions of public global variables]==============================*/
-static const struct alumno_s GASTON_VALDEZ = {
-        .apellidos = "Valdez",
-        .nombres = "Gaston Alejandro",
-        .documento = "34.818.081",
-    };
-
-    const alumno_t ALUMNOS[] = {
-        &GASTON_VALDEZ,
-    };
-
 
 
 /*=====[Prototypes (declarations) of public functions]=======================*/
@@ -66,9 +55,9 @@ bool SerializarAlumno(char * cadena, size_t espacio, const alumno_t alumno);
  * @brief 
  * 
  * @param cadena cadena donde se quiere guardar la serialización  
- * @param espacio 
- * @return true 
- * @return false 
+ * @param espacio espacio de memoria que ocupa el string cadena 
+ * @return true: se serializo correctamente 
+ * @return false no se pudo serializar 
  */
 bool SerializarAlumnos(char * cadena, size_t espacio);
 
