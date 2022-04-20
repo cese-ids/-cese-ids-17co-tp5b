@@ -28,19 +28,48 @@ extern "C" {
 /*=====[Public function-like macros]=========================================*/
 
 /*=====[Definitions of public data types]====================================*/
-
+//! Estructura de datos para alumnos  
 typedef struct alumno_s {
-    char apellidos[30];
-    char nombres[30];
-    char documento[11];
+    char apellidos[30];  //! apellido del alumno 
+    char nombres[30];    //! nombre o nombres 
+    char documento[11];  //! numero de documento !  
 } const * alumno_t;
 
 /*=====[Definitions of public global variables]==============================*/
+static const struct alumno_s GASTON_VALDEZ = {
+        .apellidos = "Valdez",
+        .nombres = "Gaston Alejandro",
+        .documento = "34.818.081",
+    };
+
+    const alumno_t ALUMNOS[] = {
+        &GASTON_VALDEZ,
+    };
+
+
 
 /*=====[Prototypes (declarations) of public functions]=======================*/
-
+/**
+ * @brief funcion de serialización de un alumno 
+ * 
+ * Esta funcion es utilizada para convertir una estructura de datos del tipo
+ * alumno a cadena y realizar la serialización  
+ * 
+ * @param[out] cadena puntero a cadena con el resultado
+ * @param[in] espacio tamaño del espacio 
+ * @param[in] alumno puntero a estructura de dato de tipo alumno 
+ * @return true los datos del alumno se serializan correctamente 
+ * @return false no hay espacio suficiente para serializar los datos del alumno
+ */
 bool SerializarAlumno(char * cadena, size_t espacio, const alumno_t alumno);
-
+/**
+ * @brief 
+ * 
+ * @param cadena cadena donde se quiere guardar la serialización  
+ * @param espacio 
+ * @return true 
+ * @return false 
+ */
 bool SerializarAlumnos(char * cadena, size_t espacio);
 
 /*=====[Prototypes (declarations) of public interrupt functions]=============*/
