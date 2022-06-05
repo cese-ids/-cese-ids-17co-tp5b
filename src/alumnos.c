@@ -59,16 +59,7 @@ const int CANTIDAD_ALUMNOS = (sizeof(ALUMNOS) / sizeof(alumno_t));
 /*=====[Implementations of public functions]=================================*/
 
 /*=====[Implementations of interrupt functions]==============================*/
-/**
- * @brief Realiza la serialización de un alumno por vez 
- *  Posible mejora: 
- * @param cadena numbre y apellido correspondiente a los alumnos
- * @param espacio tamaño de memoria ocupada por el char 
- * @param alumno variable de estructura que almacena los datos del alumno que deben ser serializados
- * @return true : se pudo serializar 
- * @return false : no se pudo serializar 
- * 
- */
+
 bool SerializarAlumno(char * cadena, size_t espacio, const alumno_t alumno) {
     int resultado;
     const char FORMATO[] = "{"

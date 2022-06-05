@@ -28,7 +28,7 @@ extern "C" {
 /*=====[Public function-like macros]=========================================*/
 
 /*=====[Definitions of public data types]====================================*/
-//! Estructura de datos para alumnos  
+//! Estructura de datos para alumnos de la 17 cohorte
 typedef struct alumno_s {
     char apellidos[30];  //! apellido del alumno 
     char nombres[30];    //! nombre o nombres 
