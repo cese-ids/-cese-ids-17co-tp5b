@@ -28,11 +28,16 @@
  * @brief Constante alumno Gastón valdez 17 cese catedra IDS 
  * 
  */
+  static const struct alumno_s ESTEBAN_VOLENTINI = {
+        .apellidos = "VOLENTINI",
+        .nombres = "Esteban Daniel",
+        .documento = "23.517.968",
+    };
 
 static const struct alumno_s VALDEZ_GASTON = {
     .apellidos = "VALDEZ",
     .nombres = "Gaston Valdez",
-    .documento = "34.818.081"
+    .documento = "34.818.081",
 };
 
 /**
@@ -42,6 +47,7 @@ static const struct alumno_s VALDEZ_GASTON = {
  */
 const alumno_t ALUMNOS[] = {
     &VALDEZ_GASTON,
+    &ESTEBAN_VOLENTINI 
 };
 
 const int CANTIDAD_ALUMNOS = (sizeof(ALUMNOS) / sizeof(alumno_t));
