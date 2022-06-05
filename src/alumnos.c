@@ -24,15 +24,30 @@
 /*=====[Definitions of external public global variables]=====================*/
 
 /*=====[Definitions of public global variables]==============================*/
+/**
+ * @brief Constante alumno Gastón valdez 17 cese catedra IDS 
+ * 
+ */
+  static const struct alumno_s ESTEBAN_VOLENTINI = {
+        .apellidos = "VOLENTINI",
+        .nombres = "Esteban Daniel",
+        .documento = "23.517.968",
+    };
 
-static const struct alumno_s ESTEBAN_VOLENTINI = {
-    .apellidos = "VOLENTINI",
-    .nombres = "Esteban Daniel",
-    .documento = "23.517.968",
+static const struct alumno_s VALDEZ_GASTON = {
+    .apellidos = "VALDEZ",
+    .nombres = "Gaston Valdez",
+    .documento = "34.818.081",
 };
 
+/**
+ * @brief vector que almacena a todos los alumnos correspondientes !
+ *  
+ * 
+ */
 const alumno_t ALUMNOS[] = {
-    &ESTEBAN_VOLENTINI,
+    &VALDEZ_GASTON,
+    &ESTEBAN_VOLENTINI 
 };
 
 const int CANTIDAD_ALUMNOS = (sizeof(ALUMNOS) / sizeof(alumno_t));
@@ -48,9 +63,9 @@ const int CANTIDAD_ALUMNOS = (sizeof(ALUMNOS) / sizeof(alumno_t));
 bool SerializarAlumno(char * cadena, size_t espacio, const alumno_t alumno) {
     int resultado;
     const char FORMATO[] = "{"
-        "\"documento\":\"%s\","
-        "\"apellidos\":\"%s\","
-        "\"nombres\":\"%s\""
+        "\"documento\":\"%s\","  
+        "\"apellidos\":\"%s\","  
+        "\"nombres\":\"%s\"" 
     "}";
 
     resultado = snprintf(cadena, espacio, FORMATO, 
@@ -58,6 +73,7 @@ bool SerializarAlumno(char * cadena, size_t espacio, const alumno_t alumno) {
 
     return (resultado >= 0);
 }
+
 
 bool SerializarAlumnos(char * cadena, size_t espacio) {
     static const int  cantidad = sizeof(ALUMNOS) / sizeof(alumno_t);
